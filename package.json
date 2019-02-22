@@ -1,0 +1,28 @@
+{
+  "name": "ES6_stoper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+     "start": "babel script.js --watch --out-file script-compiled.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ejkej87/ES6_stoper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ejkej87/ES6_stoper/issues"
+  },
+  "homepage": "https://github.com/ejkej87/ES6_stoper#readme",
+  "dependencies": {
+    "babel-standalone": "^6.26.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1"
+  }
+}
