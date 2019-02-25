@@ -6,13 +6,15 @@
      this.print(this.times)
    }
 
-   reset() {
-     this.times = {
-       minutes: 0,
-       seconds: 0,
-       miliseconds: 0
-     }
-   }
+    reset() {
+       this.times = {
+          minutes: 0,
+          seconds: 0,
+          miliseconds: 0
+       };
+       
+       this.print();
+    }
 
    print() {
      this.display.innerText = this.format(this.times)
@@ -23,20 +25,19 @@
        Math.floor(times.miliseconds)
      )}`
    }
+      
+    start() {
+       if (!this.running) {
+          this.running = true;
+          this.watch = setInterval(() => this.step(), 10);
+       }
+    }
 
-   start() {
-     if (!this.running) {
-       this.running = true
-       this.watch = setInterval(() => this.step(), 10)
-     }
-   }
-
-   step() {
-     if (!this.running) {
-       this.calculate()
-       this.print()
-     }
-   }
+    step() {
+       if (!this.running) return;
+       this.calculate();
+       this.print();
+    }
 
    calculate() {
      this.times.miliseconds += 1
@@ -73,6 +74,6 @@
  let stopButton = document.getElementById('stop');
  stopButton.addEventListener('click', () => stopwatch.stop());
 
-//  let resetButton = document.getElementById('reset');
-//  resetButton.addEventListener('click', () => stopwatch.reset());
+ let resetButton = document.getElementById('reset');
+ resetButton.addEventListener('click', () => stopwatch.reset());
 

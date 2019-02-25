@@ -22,6 +22,8 @@ var Stopwatch = function () {
         seconds: 0,
         miliseconds: 0
       };
+
+      this.print();
     }
   }, {
     key: 'print',
@@ -48,10 +50,9 @@ var Stopwatch = function () {
   }, {
     key: 'step',
     value: function step() {
-      if (!this.running) {
-        this.calculate();
-        this.print();
-      }
+      if (!this.running) return;
+      this.calculate();
+      this.print();
     }
   }, {
     key: 'calculate',
@@ -99,5 +100,7 @@ stopButton.addEventListener('click', function () {
   return stopwatch.stop();
 });
 
-//  let resetButton = document.getElementById('reset');
-//  resetButton.addEventListener('click', () => stopwatch.reset());
+var resetButton = document.getElementById('reset');
+resetButton.addEventListener('click', function () {
+  return stopwatch.reset();
+});
