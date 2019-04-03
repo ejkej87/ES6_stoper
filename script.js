@@ -1,5 +1,6 @@
 class App extends React.Component {
-   constructor() {
+   constructor(props) {
+      super(props);
       this.state = {
          running: false,
          startButton: 'inline-block',
@@ -85,32 +86,25 @@ class App extends React.Component {
    }
 
 
+
    render() {
-      return ( < div >
-         <div className = "stopWatch">
-         <nav className = "controls" >
-         <a className = "button" id = "start"
-         style = {
-            {
-               display: this.state.startButton
-            }
-         }
-         onClick = {
-            this.start.bind(this)
-         }>
-         <i className = "fas fa-play" > < /i> < /a> <a className = "button" id = "stop"
-         style = {
-            {
-               display: this.state.stopButton
-            }
-         }
-         onClick = {this.stop.bind(this)}>
-         <i className = "fas fa-pause" > </i> </a> <a className = "button" id = "reset"
-         onClick = {this.reset.bind(this)}>
-         <i className = "fas fa-redo" > < /i> </a> <a className = "button" id = "split"
-         onClick = {this.split.bind(this)}>
-         <ul className = "results" > {this.state.results} </ul> 
-      < /div >
+      return ( 
+         <div>
+            <div className="stopWatch">
+               <nav className="controls" >
+                  <a className="button" id="start" style={{display: this.state.startButton}} onClick={this.start.bind(this)}>
+                     <i className="fas fa-play"></i>
+                  </a> 
+                  <a className="button" id="stop" style={{display: this.state.stopButton}} onClick={this.stop.bind(this)}>
+                     <i className="fas fa-pause"></i>
+                  </a>
+                  <a className="button" id="reset" onClick={this.reset.bind(this)}>
+                     <i className="fas fa-redo"></i>
+                  </a>
+                  <ul className="results">{this.state.results}</ul> 
+               </nav>
+            </div>
+         </div>
       )
    }
 
