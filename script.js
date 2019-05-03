@@ -1,6 +1,6 @@
 class App extends React.Component {
-   constructor(props) {
-      super(props);
+   constructor() {
+      super();
       this.state = {
          running: false,
          startButton: 'inline-block',
@@ -24,7 +24,7 @@ class App extends React.Component {
          }
       })
    }
-
+ 
    format(times) {
       return `${pad0(times.minutes)}:${pad0(times.seconds)}:${pad0(Math.floor(times.miliseconds))}`;
    }
@@ -92,10 +92,10 @@ class App extends React.Component {
          <div>
             <div className="stopWatch">
                <nav className="controls" >
-                  <a className="button" id="start" style={{display: this.state.startButton}} onClick={this.start.bind(this)}>
+                  <a className="button" id="start" onClick={this.start.bind(this)}>
                      <i className="fas fa-play"></i>
                   </a> 
-                  <a className="button" id="stop" style={{display: this.state.stopButton}} onClick={this.stop.bind(this)}>
+                  <a className="button" id="stop" onClick={this.stop.bind(this)}>
                      <i className="fas fa-pause"></i>
                   </a>
                   <a className="button" id="reset" onClick={this.reset.bind(this)}>
@@ -103,7 +103,13 @@ class App extends React.Component {
                   </a>
                   <ul className="results">{this.state.results}</ul> 
                </nav>
+               <div className="watch">
+						{this.format(this.state.times)}
+					</div>
             </div>
+            <ul className="results">
+					{this.state.results}
+				</ul>
          </div>
       )
    }

@@ -4,7 +4,7 @@
   "description": "",
   "main": "script-compiled.js",
   "scripts": {
-     "start": "babel script.js --watch --out-file script-compiled.js"
+    "start": "babel script.js --watch --out-file script-compiled.js"
   },
   "repository": {
     "type": "git",

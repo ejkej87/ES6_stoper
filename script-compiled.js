@@ -11,10 +11,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var App = function (_React$Component) {
    _inherits(App, _React$Component);
 
-   function App(props) {
+   function App() {
       _classCallCheck(this, App);
 
-      var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+      var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
 
       _this.state = {
          running: false,
@@ -123,12 +123,12 @@ var App = function (_React$Component) {
                   { className: 'controls' },
                   React.createElement(
                      'a',
-                     { className: 'button', id: 'start', style: { display: this.state.startButton }, onClick: this.start.bind(this) },
+                     { className: 'button', id: 'start', onClick: this.start.bind(this) },
                      React.createElement('i', { className: 'fas fa-play' })
                   ),
                   React.createElement(
                      'a',
-                     { className: 'button', id: 'stop', style: { display: this.state.stopButton }, onClick: this.stop.bind(this) },
+                     { className: 'button', id: 'stop', onClick: this.stop.bind(this) },
                      React.createElement('i', { className: 'fas fa-pause' })
                   ),
                   React.createElement(
@@ -141,7 +141,17 @@ var App = function (_React$Component) {
                      { className: 'results' },
                      this.state.results
                   )
+               ),
+               React.createElement(
+                  'div',
+                  { className: 'watch' },
+                  this.format(this.state.times)
                )
+            ),
+            React.createElement(
+               'ul',
+               { className: 'results' },
+               this.state.results
             )
          );
       }

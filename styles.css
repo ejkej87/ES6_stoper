@@ -2,6 +2,7 @@ body {
     display: flex;
     justify-content: center;
     color: #BBB;
+    font-size: 30px;
 }
 .stoper {
     background-color: #607D8B;
@@ -21,4 +22,8 @@ body {
 
 .stopwatch {
     font-size: 50px;
+}
+
+a {
+    margin-right: 10px;
 }
